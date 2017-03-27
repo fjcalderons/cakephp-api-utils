@@ -121,7 +121,7 @@ class AppController extends Controller {
 	 * If a redirect is occuring, then make sure the current request is considered
 	 * an API request. If so, then render out a response rather than redirecting.
 	 */
-	public function beforeRedirect($url, $status = null) {
+	public function beforeRedirect($url, $status = null, $exit = true) {
 		
 		if (in_array($this->params['action'], $this->Api->exemptActions())) {
 			return true;
